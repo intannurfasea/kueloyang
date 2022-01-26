@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kue Loyang - Shop Kue Cookies</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/favicon.png">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #D8BFD8;
+            --color-secondary: #fcf9da;
+            --color-third: #BFD8D8;
+            --color-success: #BFD8BF
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--color-primary);
+            margin: 0;
+        }
+
+        .header-container {
+            background-image: url("../assets/img/cookies_wallpaper.jpg");
+            width: 100%;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10px;
+        }
+
+        .logo-title {
+            text-align: center;
+            font-family: "Staatliches", sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            padding: 0;
+            margin: 0;
+            color: whitesmoke;
+        }
+
+        .logo-subtitle {
+            display: block;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            margin: 0;
+        }
+
+        .navbar-container {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            margin: 0;
+        }
+
+        .navbar-children {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #9A7B65;
+        }
+
+        .content {
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .title {
+            color: black;
+            font-family: "PT Serif", sans-serif;
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .price {
+            font-size: 35px;
+            margin: 0;
+            color: whitesmoke;
+            text-shadow: 0 0 3px black;
+        }
+
+        .breadcrumb {
+            color: #404040;
+            text-decoration: none;
+        }
+
+        .breadcrumb a {
+            color: #404040;
+            text-decoration: none;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .grid-column {
+            float: left;
+            width: 50%;
+            padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .grid-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .grid-quater-column {
+            float: left;
+            width: 25%;
+            padding: 20px;
+        }
+
+        .grid-quater-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .button {
+            background-color: #9A7B65;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: var(--color-secondary);
+            padding: 20px;
+        }
+
+        .card-header {
+            background-color: #9A7B65;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .card-content {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .products-card {
+            padding: 0;
+            border: none;
+            background: none;
+            text-align: start;
+            cursor: pointer;
+        }
+
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #231F20;
+            color: white;
+        }
+
+        /* SLIDESHOW CSS */
+        .slide-img {
+            vertical-align: middle;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .slideshow-container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .slide-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .slide-column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        /* SLIDESHOW CSS */
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <img class="logo" src="../assets/logo/logo.png" alt="Shop Kue Cookies">
+        <h1 class="logo-title">kueLoyang</h1>
+        <h2 class="logo-subtitle">SHOP KUE COOKIES</h2>
+        <div style="height: 20px;"></div>
+    </div>
+    <!-- Header -->
+
+    <!-- Navbar -->
+    <ul class="navbar-container">
+        <li class="navbar-children">
+            <a href="../index.html">Home</a>
+        </li>
+        <li class="navbar-children">
+            <a class="active" href="../shop.html">Shop</a>
+        </li>
+        <li class="navbar-children">
+            <a href="../contact.html">Contact</a>
+        </li>
+        <li class="navbar-children">
+            <a href="../about.html">About</a>
+        </li>
+
+    </ul>
+    <!-- Navbar -->
+
+    <div class="content">
+        <p class="breadcrumb">
+            <a href="../index.html">Shop Kue Cookies</a>
+            \ <a href="../shop.html">Shop</a>
+            \ <b>Sea Salt Chocolate Chip Cookies</b><!-- Products Name -->
+        </p>
+
+        <div class="grid-row" style="background-color: var(--color-third);">
+            <div class="grid-column">
+                <img src="../assets/img/cookies1.jpg" width="580px" height="400px" style="object-fit: cover;">
+            </div>
+            <div class="grid-column">
+                <h1 class="title">Sea Salt Chocolate Chip Cookies</h1><!-- Products Name -->
+                <h3 class="price">RM10.00</h3><!-- Products Price -->
+                <h3 class="price">100 gram</h3><!-- Products Weight -->
+
+                <div style="height: 10px;"></div>
+
+                <div class="form-group">
+                    <label for="qty">Quantity:</label>
+                    <input name="qty" id="qty" type="number" />
+                </div>
+
+                <div style="height: 30px;"></div>
+                <button id="btnBuy" class="button">Buy Now</button>
+
+            </div>
+        </div>
+
+        <div style="height: 30px;"></div>
+
+        <!-- <div class="card">
+            <div class="card-header">
+                <p>Product Description</p>
+            </div>
+            <div class="card-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div> -->
+
+        <div style="height: 30px;"></div>
+
+        <div class="card">
+            <div class="card-header">
+                <p>Other Products</p>
+            </div>
+
+            <div class="grid-quater-row" style="background-color: var(--color-secondary);">
+                <div class="grid-quater-column">
+                    <form action="2.html">
+                        <button type="submit" class="products-card">
+                            <img src="../assets/img/cookies2.jpg" style="width:100%; height: 200px; object-fit: cover;"
+                                alt="Snowy Mountains">
+                            <p style="font-weight: bolder; font-size: 20px; font-family: 'PT Serif', sans-serif;">
+                                Caramel Dark Cocoa Sables
+                            </p>
+                            <p style="font-size: 18px;color: brown;font-weight: bolder;">RM10.00</p>
+                            <p style="font-size: 18px;color: brown;font-weight: bolder;">100 gram</p>
+                        </button>
+                    </form>
+                </div>
+                <div class="grid-quater-column">
+                    <form action="3.html">
+                        <button type="submit" class="products-card">
+                            <img src="../assets/img/cookies3.jpg" style="width:100%; height: 200px; object-fit: cover;"
+                                alt="Snowy Mountains">
+                            <p style="font-weight: bolder; font-size: 20px; font-family: 'PT Serif', sans-serif;">
+                                Sea Salt Cookies + Caramel Sables
+                            </p>
+                            <p style="font-size: 18px;color: brown;font-weight: bolder;">RM45.00</p>
+                            <p style="font-size: 18px;color: brown;font-weight: bolder;">(Mix & Match)</p>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Copyright@Shop Kue Cookies 2022</p>
+    </div>
+</body>
+
+</html>

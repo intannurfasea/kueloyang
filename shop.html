@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kue Loyang - Shop Kue Cookies</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #D8BFD8;
+            --color-secondary: #fcf9da;
+            --color-third: #BFD8D8;
+            --color-success: #BFD8BF
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--color-primary);
+            margin: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-family: "Staatliches", sans-serif;
+        }
+
+        .header-container {
+            background-image: url("assets/img/cookies_wallpaper.jpg");
+            width: 100%;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10px;
+        }
+
+        .logo-title {
+            text-align: center;
+            font-family: "Staatliches", sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            padding: 0;
+            margin: 0;
+            color: black;
+        }
+
+        .logo-subtitle {
+            display: block;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            margin: 0;
+        }
+
+        .navbar-container {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            margin: 0;
+        }
+
+        .navbar-children {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .navbar-active {
+            background-color: #9A7B65;
+        }
+
+        .content {
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .title {
+            color: white;
+            font-family: "PT Serif", sans-serif;
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .price {
+            font-size: 35px;
+            margin: 0;
+        }
+
+        .breadcrumb {
+            color: #404040;
+            text-decoration: none;
+        }
+
+        .breadcrumb a {
+            color: #404040;
+            text-decoration: none;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .grid-column1 {
+            float: left;
+            width: 20%;
+            padding: 20px;
+        }
+
+        .grid-column2 {
+            float: left;
+            width: 80%;
+            padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .grid-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .grid-quater-column {
+            float: left;
+            width: 25%;
+            padding: 20px;
+        }
+
+        .grid-quater-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .button {
+            background-color: #9A7B65;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: var(--color-secondary);
+            padding: 20px;
+        }
+
+        .card-header {
+            background-color: #9A7B65;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .card-content {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #231F20;
+            color: white;
+        }
+
+        .banner {
+            height: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about {
+            background-color: var(--color-third);
+            text-align: center;
+            padding: 50px;
+        }
+
+        .card-about {
+            background-color: var(--color-secondary);
+            border-radius: 5px;
+            text-align: center;
+            padding: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+            border-style: solid;
+            border-color: #A3BA8D;
+        }
+
+        .about-title {
+            font-family: "PT Serif", sans-serif;
+            font-size: 40px;
+        }
+
+        .header-card {
+            background-color: var(--color-secondary);
+            text-align: center;
+            padding: 50px;
+            border-radius: 5px;
+        }
+
+        .header-title {
+            font-family: "PT Serif", sans-serif;
+            font-size: 30px;
+        }
+
+        .products-card {
+            padding: 35px;
+            margin-bottom: 20px;
+            border-color: var(--color-primary);
+            background-color: var(--color-third);
+        }
+
+        .products-title {
+            margin: 0;
+            font-family: "PT Serif", sans-serif;
+            font-size: 32px;
+        }
+
+        .products-price {
+            font-size: 24px;
+            color: brown;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        .products-weight {
+            font-size: 24px;
+            color: black;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <img class="logo" src="assets/logo/logo.png" alt="Shop Kue Cookies">
+        <h1 class="logo-title">kueLoyang</h1>
+        <h2 class="logo-subtitle">SHOP KUE COOKIES</h2>
+        <div style="height: 20px;"></div>
+    </div>
+    <!-- Header -->
+
+    <!-- Navbar -->
+    <ul class="navbar-container">
+        <li class="navbar-children">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="navbar-children">
+            <a class="navbar-active" href="shop.html">Shop</a>
+        </li>
+        <li class="navbar-children">
+            <a href="contact.html">Contact Us</a>
+        </li>
+        <li class="navbar-children">
+            <a href="about.html">About Us</a>
+        </li>
+        <li class="navbar-children">
+            <a href="gallery.html">Gallery</a>
+
+        </li>
+    </ul>
+    <!-- Navbar -->
+
+    <div class="content">
+        <p class="breadcrumb">
+            <a href="index.html">Shop Kue Cookies</a>
+            \ <b>Shop</b>
+        </p>
+
+        <div class="products-card">
+            <div class="grid-row">
+                <div class="grid-column1">
+                    <img src="assets/img/cookies1.jpg" width="200px" height="200px" style="object-fit: cover;">
+                </div>
+                <div class="grid-column2" style="text-align: start;">
+                    <h2 class="products-title">&ensp;Sea Salt Chocolate Chip Cookies</h2> <!-- Products Name -->
+                    <h3 class="products-price">&ensp;RM20.00</h3> <!-- Products Price -->
+                    <h3 class="products-weight">&ensp;170 gram</h3> <!-- Products Weight -->
+                    <a href="shop/1.html" class="button">Buy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-card">
+            <div class="grid-row">
+                <div class="grid-column1">
+                    <img src="assets/img/cookies2.jpg" width="200px" height="200px" style="object-fit: cover;">
+                </div>
+                <div class="grid-column2" style="text-align: start;">
+                    <h2 class="products-title">&ensp;Caramel Dark Cocoa Sables</h2> <!-- Products Name -->
+                    <h3 class="products-price">&ensp;RM27.00</h3> <!-- Products Price -->
+                    <h3 class="products-weight">&ensp;200 gram</h3> <!-- Products Weight -->
+                    <a href="shop/2.html" class="button">Buy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-card">
+            <div class="grid-row">
+                <div class="grid-column1">
+                    <img src="assets/img/cookies3.jpg" width="200px" height="200px" style="object-fit: cover;">
+                </div>
+                <div class="grid-column2" style="text-align: start;">
+                    <h2 class="products-title">&ensp;Sea Salt Cookies + Caramel Sables</h2> <!-- Products Name -->
+                    <h3 class="products-price">&ensp;RM45.00</h3> <!-- Products Price -->
+                    <h3 class="products-weight">&ensp;(Mix & Match)</h3> <!-- Products Weight -->
+                    <a href="shop/3.html" class="button">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright@Shop Kue Cookies 2022</p>
+    </div>
+</body>
+
+</html>
